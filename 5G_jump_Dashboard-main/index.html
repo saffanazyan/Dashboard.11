@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RT Lab 5G Core Network Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+        <div class="container">
+            <div class="navigation">
+                <div class="Title">
+                    <a class="Title-a">
+                        <span class="icon"><ion-icon name="wine-outline"></ion-icon></ion-icon></span>
+                        <span class="Title-title">RT Lab</span>
+                    </a>
+                </div>
+                <ul>
+                    <div class="UserPictureDiv" id="UserPictureDiv">
+                        <img src="./icon/man.png" class="UserPicture">
+                        <div class="UserPictureName">Annie Lin </div>
+                    </div>
+                    <li id="Dashboard">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li id="NFs" class="NFs">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                            <span class="title">Network Functions</span>
+                        </a>
+                    </li>
+                    <li id="User" class="user">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="title">User</span>
+                        </a>
+                    </li>
+                    <li id="Help">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                            <span class="title">Help</span>
+                        </a>
+                    </li>
+                    <li id="Message">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                            <span class="title">Message</span>
+                        </a>
+                    </li>
+                    <li id="Settings">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="title">Setting</span>
+                        </a>
+                    </li>
+                    <li id="SignOut">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                            <span class="title">Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="NFlist" id="NFlist">
+                    <ul>
+                        <li>                        
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">AMF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">SMF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">UPF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">AUSF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">NSSF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">PCF</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">UDM</span>
+                            </a>
+                        </li>
+                        <li>                          
+                            <a href="#">
+                                <span class="icon"><ion-icon name="pricetag-outline"></ion-icon></ion-icon></span>
+                                <span class="title">UDR</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topbar">
+                <div class="toggle" id="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div> 
+            
+            <!---  Main Page  --->
+            <div class="main" id="MainPage">
+                <!---tasks-->
+                <div class="cardBox">
+                    <div class="card" id="Users">
+                        <div>
+                            <div class="numbers">520</div>
+                            <div class="cardName">Users</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="IoT">
+                        <div>
+                            <div class="numbers">230</div>
+                            <div class="cardName">IoT</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="today-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="Stations">
+                        <div>
+                            <div class="numbers">40</div>
+                            <div class="cardName">Stations</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="radio-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card" id="Errors">
+                        <div>
+                            <div class="numbers">0</div>
+                            <div class="cardName">Errors</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="alert-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <!--UsersDetails-->
+                <div class="details" id="UsersDetails">
+                    <div class="UserInfos">
+                        <div class="cardHeader">
+                            <h2>User Info</h2>
+                            <a href="#" class="btn">View alert-outline</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>IMSI</td>
+                                    <td>Time</td>
+                                    <td>Station ID</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>8</td>
+                                    <td>6544567945</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>3</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>3457882346</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>55</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Idle">Idle</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Idle">Idle</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Disconnected">Disconnected</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--IoTDetails-->
+                <div class="details" id="IoTDetails">
+                    <div class="UserInfos">
+                        <div class="cardHeader">
+                            <h2>IoT Devices Info</h2>
+                            <a href="#" class="btn">View alert-outline</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>IMSI</td>
+                                    <td>Time</td>
+                                    <td>Station ID</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Idle">Idle</span></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>6544567945</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>3</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Disconnected">Disconnected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>3457882346</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>55</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>4317867656</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>1</td>
+                                    <td><span class="status Idle">Idle</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--StationsDetails-->
+                <div class="details" id="StationsDetails">
+                    <div class="UserInfos">
+                        <div class="cardHeader">
+                            <h2>Base Stations Info</h2>
+                            <a href="#" class="btn">View alert-outline</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>PLMN</td>
+                                    <td>Time</td>
+                                    <td>Connected UE</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                    <td>63451</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>90</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>23123</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>11</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>83600</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>4</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>12319</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>231</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>33312</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>41</td>
+                                    <td><span class="status Connected">Connected</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--ErrorsDetails-->
+                <div class="details" id="ErrorsDetails">
+                    <div class="UserInfos">
+                        <div class="cardHeader">
+                            <h2>Error Messages</h2>
+                            <a href="#" class="btn">View alert-outline</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Error Code</td>
+                                    <td>Time</td>
+                                    <td>Description</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>400</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>Connection error</td>
+                                    <td><span class="status Connected">Solved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>202</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>AMF Conjestion</td>
+                                    <td><span class="status Idle">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>102</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>AMF Crash</td>
+                                    <td><span class="status alarm">Alarm</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>722</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>gNB no.x missed</td>
+                                    <td><span class="status Connected">Solved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>522</td>
+                                    <td>xx:xx:xx</td>
+                                    <td>SMF Conjestion</td>
+                                    <td><span class="status Connected">Solved</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!---  NetworkFunctions Page  --->
+            <div class="main" id="NetworkFunctionsPage">
+                1
+            </div>
+
+            <!---  User Page  --->
+            <div class="main" id="UserPage">
+                2
+            </div>
+
+            <!---  Help Page  --->
+            <div class="main" id="HelpPage">
+                3
+            </div>
+
+            <!---  Message Page  --->
+            <div class="main" id="MessagePage">
+                4           
+            </div>
+
+            <!---  Setting Page  --->
+            <div class="main" id="SettingPage">
+                5
+            </div>
+        </div>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script src="Functions.js" ></script>
+        <script src="PageControl.js" ></script>
+    </body>
+</html>
