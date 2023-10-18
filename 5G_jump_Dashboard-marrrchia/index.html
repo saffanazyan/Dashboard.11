@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<title>RTSite</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="./index.html" class="brand"><i class='bx bxs-smile icon'></i> RTsite</a>
+		<ul class="side-menu">
+			<li id="Dashboard"><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Network Functions <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li id="AMF_bar"><a href="#">AMF</a></li>
+					<li id="SMF_bar"><a href="#">SMF</a></li>
+					<li id="UPF_bar"><a href="#">UPF</a></li>
+					<li id="AUSF_bar"><a href="#">AUSF</a></li>
+					<li id="NSSF_bar"><a href="#">NSSF</a></li>
+					<li id="PCF_bar"><a href="#">PCF</a></li>
+					<li id="UDM_bar"><a href="#">UDM</a></li>
+					<li id="NRF_bar"><a href="#">NRF</a></li>
+				</ul>
+			</li>
+			<li id="Charts_bar"><a href="#"><i class='bx bxs-chart icon' ></i> Resource Usage</a></li>
+			<li id="Widgets_bar"><a href="#"><i class='bx bxs-widget icon' ></i> History</a></li>
+			<!-- <li class="divider" data-text="Sub-functions">Sub-functions</li> -->
+			<!-- <li id="Message_bar"><a href="#"><i class='bx bx-table icon' ></i> Message</a></li> -->
+			<!-- <li>
+				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Basic</a></li>
+					<li><a href="#">Select</a></li>
+					<li><a href="#">Checkbox</a></li>
+					<li><a href="#">Radio</a></li>
+				</ul>
+			</li> -->
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	<nav>
+		<!-- <i class='bx bx-menu toggle-sidebar' ></i> -->
+		<form action="#">
+			<div class="form-group">
+				<input type="text" placeholder="Search...">
+				<i class='bx bx-search icon' ></i>
+			</div>
+		</form>
+		<span class="divider"></span>
+		<div class="navbar">
+			<nav>
+				<ul id="afterlogin">
+					<li id="Home_bar"><a href="#">Home</a></li>
+					<!-- <li id="Profile_bar"><a href="#">Profile</a></li> -->
+					<li id="Signup"><a href="#">Add user</a></li>
+					<li id="Logout"><a href="#">Log out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</nav>
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<span class="divider"></span>
+			<div class="navbar">
+				<nav>
+					<ul id="afterlogin">
+						<li><a href="./index.html">Home</a></li>
+						<li id="Signup"><a href="#">Add user</a></li>
+					</ul>
+				</nav>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Dashboard</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Dashboard</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<div id="Dashboard_User">
+								<h2>1500</h2>
+							</div>
+							<p>User connected / Total user</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<div id="Dashboard_User_pa">
+						<!-- <span class="progress" data-value="0%"></span>
+						<span class="label">0%</span> -->
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<div id="Dashboard_error">
+								<h2>235</h2>
+							</div>
+							<p>Errors</p>
+						</div>
+						<ion-icon name="alert-outline"></ion-icon></i>
+					</div>
+					<div id="Dashboard_error_pa">
+						<!-- <span class="progress" data-value="0%"></span>
+						<span class="label">0%</span> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>User Report</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="chart"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Errors Report</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="chart4"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+
+	<!-- NAVBAR -->
+	<section id="AMF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<span class="divider"></span>
+			<div class="navbar">
+				<nav>
+					<ul id="afterlogin">
+						<li><a href="./index.html">Home</a></li>
+						<li id="Signup"><a href="#">Add user</a></li>
+					</ul>
+				</nav>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">AMF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">AMF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>AMF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="AMF_node">VM 103</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="AMF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="AMF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+					<!-- <br>
+					<br>
+					<h3>Network I/O</h3>
+					<div id="AMF_network_usage">
+						<span class="progress" data-value="80%"></span>
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div> -->
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="AMF_Log">
+						<p>[ 2022.12.31 10:30:12 ] AMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AMF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AMF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AMF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AMF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AMF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="SMF">
+		<!-- NAVBAR -->
+		<!-- <nav> -->
+			<!-- <i class='bx bx-menu toggle-sidebar' ></i> -->
+			<!-- <form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">SMF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">SMF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>SMF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="SMF_node">VM 104</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="SMF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="SMF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="SMF_Log">
+						<p>[ 2022.12.31 10:30:12 ] SMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] SMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] SMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] SMF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] SMF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="SMF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="SMF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="SMF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="SMF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="UPF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">UPF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">UPF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>UPF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="UPF_node">VM 105</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="UPF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="UPF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="UMF_Log">
+						<p>[ 2022.12.31 10:30:12 ] UPF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UPF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UPF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UPF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UPF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UPF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UPF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UPF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UPF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="AUSF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+		
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">AUSF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">AUSF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>AUSF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="AUSF_node">VM 105</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="AUSF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="AUSF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="AUSF_Log">
+						<p>[ 2022.12.31 10:30:12 ] AUSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AUSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AUSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AUSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] AUSF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AUSF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AUSF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AUSF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="AUSF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="NSSF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">NSSF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">NSSF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>NSSF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="NSSF_node">VM 105</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="NSSF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="NSSF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="NSSF_Log">
+						<p>[ 2022.12.31 10:30:12 ] NSSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NSSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NSSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NSSF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NSSF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NSSF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NSSF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NSSF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NSSF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="PCF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+		
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">PCF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">PCF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>PCF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="PCF_node">VM 105</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="PCF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="PCF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="PCF_Log">
+						<p>[ 2022.12.31 10:30:12 ] PCF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] PCF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] PCF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] PCF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] PCF Congestion</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="PCF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="PCF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="PCF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="PCF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="UDM">
+		<!-- NAVBAR -->
+		<!-- <nav>
+		
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">UDM</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">UDM</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>UDM</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="UDM_node">VM 106</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="UDM_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="UDM_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="UDM_Log">
+						<p>[ 2022.12.31 10:30:12 ] UDM Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UDM Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UDM Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UDM Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] UDM Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UDM_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UDM_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UDM_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="UDM_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="NRF">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">NRF</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Network Functions</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">NRF</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>NRF</h2>
+							<p>(Uptime: 33 days 03:35:14)</p>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<div>
+						<h3>Status</h3>
+						<p>Running</p>
+					</div>
+					<br>
+					<div>
+						<h3>Node</h3>
+						<p id="NRF_node">VM 108</p>	
+					</div>
+					<br>
+					<h3>CPU usage</h3>
+					<div id="NRF_cpu_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">100% of 4 CPU(s)</span>
+					</div>
+					<br>
+					<br>
+					<h3>Memory usage</h3>
+					<div id="NRF_memory_usage">
+						<!-- <span class="progress" data-value="40%"></span> -->
+						<span class="label">50% (4.0 GiB of 8.0 GiB)</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Logs</h2>
+							<!-- <p>IoT device</p> -->
+						</div>
+						<ion-icon name="today-outline"></ion-icon></i>
+					</div>
+					<br>
+					<div id="NRF_Log">
+						<p>[ 2022.12.31 10:30:12 ] NRF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NRF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NRF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NRF Congestion</p>
+						<p>[ 2022.12.31 10:30:12 ] NRF Congestion</p>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NRF_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NRF_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NRF_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="NRF_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+	<section id="Profile">
+		<!-- NAVBAR -->
+		<!-- <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Profile</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">User</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Profile</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card_middle">
+					<div class="head">
+						<div>
+							<h2></h2>
+						</div>
+						<ion-icon name="phone-portrait-outline" class="profile_photo"></ion-icon></i>
+					</div>
+					<div id="ProfileDetail" class="ProfileDetail">
+						<div class="Profile_label"><label>ID</label><p>Wiskey942</p></div><br>
+						<div class="Profile_label"><label>Name</label><p>Terry Tang</p></div><br>
+						<div class="Profile_label"><label>Phone</label><p>0912345678</p></div><br>
+						<div class="Profile_label"><label>Email</label><p>wiskey942@wiskey.org.tw</p></div><br>
+						<div class="Profile_label"><label>Address</label><p>威士忌大樓四樓的酒桶 No.8</p></div><br>
+					</div>
+
+				</div>
+
+			</div>
+		</main>
+		<!-- MAIN -->
+
+	</section>
+
+	<section id="MainChart">
+		<!-- <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<main>
+			<h1 class="title">Resource Usage</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Resource Usage</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>5G Core Network Resource Usage</h2>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<br><br>
+					<i class='bx bxs-microchip icon' ><h3>CPU usage</h3></i>
+					<div id="RU_CPU">
+						<!-- <span class="progress" data-value="9%"></span> -->
+						<span class="label">9% of 32 CPU(s)</span>
+					</div>
+					<br><br>
+					<i class='bx bxs-memory-card icon' ><h3>RAM usage</h3></i>
+					<div id="RU_RAM">
+						<!-- <span class="progress" data-value="73.51%"></span> -->
+						<span class="label">73.51% (102.58 GiB of 125.84 GiB)</span>
+					</div>
+					<br><br>
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h1>Hardware Info.</h1><br>
+						</div>
+						<ion-icon name="phone-portrait-outline"></ion-icon></i>
+					</div>
+					<h2>CPU</h2>
+					<h3>32 x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz (2 Sockets)</h3>
+					<br><br>
+					<h2>Kernel Version</h2>
+					<h3>Version Linux 5.4.34-1-pve #1 SMP PVE 5.4.34-2 (Thu, 07 May 2020 10:02:02 +0200)</h3>
+					<br><br>
+					<h2>Manager Version</h2>
+					<h3>manager/6.2-4/9824574a</h3>
+					<br><br>
+				</div>
+			</div>
+			<div class="info-data">
+				<div class="card_middle">
+					<h1>Status</h1>
+					<div class="Widget">
+						<box-icon class="check-circle" name='check-circle' type='solid' color='#3fbf47'></box-icon>
+					</div>
+					<p>Standalone node - no cluster defined</p>
+				</div>
+				<div class="card_middle2">
+					<h1>Nodes</h1>
+					<div class="Node_status">
+						<box-icon name='check'color='#3fbf47' ></box-icon>
+						<p>online</p>
+						<div>
+							<p>10</p>
+						</div>
+					</div>
+					<br>
+					<div class="Node_status">
+						<box-icon name='x' color='#da0633' ></box-icon>
+						<p>offline</p>
+						<div>
+							<p>0</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>CPU Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="MainChart_chart_CPU"></div>
+					</div>
+				</div>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Memory Usage</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="MainChart_chart_RAM"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Network Traffic</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="MainChart_chart_Net"></div>
+					</div>
+				</div>	
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Disk I/O</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="MainChart_chart_Disk"></div>
+					</div>
+				</div>	
+			</div>
+		</main>
+	</section>
+
+	<section id="MainWidget">
+		<!-- <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav> -->
+		<main>
+			<h1 class="title">History</h1>
+			<ul class="breadcrumbs">
+				<li><a href="./index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">History</a></li>
+			</ul>
+			<div class="info-data">
+				<div class="card">
+					<form class="Historyform" id="Historyform" method="GET">
+						<div class="NFselection">
+							<select id="H_NFs" name="H_NFs" class="H_NFs">
+								<option value="amf">AMF</option>
+								<option value="smf">SMF</option>
+								<option value="upf">UPF</option>
+								<option value="ausf">AUSF</option>
+								<option value="nssf">NSSF</option>
+								<option value="pcf">PCF</option>
+								<option value="udm">UDM</option>
+								<option value="nrf">NRF</option>
+							  </select>
+						</div>
+						<div class="SetTime">
+							<input type="datetime-local" id="DateBegin">
+							<p>To</p>  
+							<input type="datetime-local" id="DateEnd">
+						</div>
+						<button id="H_btn" name="H_btn" class="H_btn">Submit</button>
+					</form>
+						<div>
+							<h2 class="H_h2"> - Select your time range to show up the log of the network function</h2>
+							<div class="Logs" id="H_Logs"></div>
+						</div>
+				</div>
+			</div>
+		</main>
+	</section>
+
+	<section id="Message">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li id="Profile_bar"><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+		<!-- MAIN -->
+		<main>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Chatbox</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chat-box">
+						<p class="day"><span>Today</span></p>
+						<div class="msg">
+							<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+							<div class="chat">
+								<div class="profile">
+									<span class="username">Alan</span>
+									<span class="time">18:30</span>
+								</div>
+								<p>Hello</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatum eos quam dolores eligendi exercitationem animi nobis reprehenderit laborum! Nulla.</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto!</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum, dolor sit amet.</p>
+							</div>
+						</div>
+					</div>
+					<form action="#">
+						<div class="form-group">
+							<input type="text" placeholder="Type...">
+							<button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+
+    <section id="Login-container" class="Login-container">
+		<div class="LoginBackground">
+			<div class="login-content">
+				<!-- <div>
+					<a href="#" id="LoginClose"><ion-icon name="close-circle-outline"></ion-icon></a>
+				</div> -->
+				<form id="LoginmyForm">
+					<!-- <img src="img/handshake.png"> -->
+					<h2 class="title">Welcome</h2>
+					   <div class="input-div one">
+						  <div class="i">
+								  <i class="fas fa-user"></i>
+						  </div>
+						  <div class="div">
+								  <!-- <h5>Username</h5> -->
+								  <input id="S_Account" type="text" class="input" placeholder="Username">
+						  </div>
+					   </div>
+					   <div class="input-div pass">
+						  <div class="i"> 
+							   <i class="fas fa-lock"></i>
+						  </div>
+						  <div class="div">
+							   <!-- <h5>Password</h5> -->
+							   <input id="S_Password" type="password" class="input" placeholder="Password">
+					   </div>
+					</div>
+					<!-- <a href="#" id="Signup">Click To Sign Up !</a> -->
+					<input type="submit" class="btn" value="Login">
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section id="signup-container">
+		<div class="SignupBackground">
+			<div class="Signup-content">
+				<form class="form" id="myForm" name="myForm"  method="POST">
+					<div>
+						<a href="#" id="SignupClose"><ion-icon name="close-circle-outline"></ion-icon></a>
+					</div>
+					<input id="s_firstname" name="s_firstname" placeholder="First Name" type="text" required />
+					<input id="s_lastname" name="s_lastname" placeholder="Last Name" type="text" required/>
+					<input id="s_email" name="s_email" placeholder="Example@gmail.com" type="email" required />
+					<input id="s_password" name="s_password" placeholder="password" type="password" required />
+					<input id="s_company" name="s_company" placeholder="Company" type="text" required />
+					<input id="s_phone" name="s_phone" placeholder="Phone" type="text" required />
+					<!-- <button id="SignUP_btn">Sign Up</button> -->
+					<input type="submit" class="btn" value="Sign Up">
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section id="verify-container">
+		<div class="VerifyBackground">
+			<div class="Verify-content">
+				<form class="form" id="VerifymyForm" name="myForm"  method="POST">
+					<!-- <input id="S_email" name="S_First_Name" placeholder="Email" type="text" required /> -->
+					<input id="s_verifycode" name="s_verifycode" placeholder="Verify Code" type="text" required/>
+					<button>Verify</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="script.js"></script>
+	<script src="NF.js"></script>
+	<script src="resource.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
